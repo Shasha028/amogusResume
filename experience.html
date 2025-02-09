@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Interactive Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div id="intro-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-experience">
+                <h2 class="modal-title">My Work Experience 💼🚀</h2>
+                <hr class="modal-line">
+                <!-- Private Tutor Experience -->
+                <h3 class="experience-job-title">Private Tutor</h3>
+                <p class="experience-company">Self-employed</p>
+                <p class="experience-duration">2021-2022</p>
+                <ul class="experience-list">
+                    <li>A primary student received individualized instruction in every topic, improving their comprehension and performance in key academic areas.</li>
+                    <li>Created engaging learning exercises and lesson plans specifically suited to tutee needs and learning preferences.</li>
+                    <li>Created a supportive and upbeat learning atmosphere that enhanced confidence and academic achievement.</li>
+                </ul>
+                <br><br>
+                <!-- Internship Experience -->
+                <h3 class="experience-job-title">Internship Training</h3>
+                <p class="experience-company">Highly Succeed Inc.</p>
+                <p class="experience-duration">August 2024 - October 2024</p>
+                <ul class="experience-list">
+                    <li>Worked concurrently in the Web Development and HR Departments, focusing on developing software applications and websites while supporting HR functions.</li>
+                    <li>Contributed to multiple projects by utilizing skills in HTML, CSS, and other programming languages to enhance user experience and functionality.</li>
+                    <li>Assisted in HR tasks including interviewing and onboarding new interns, managing documentation, and ensuring a smooth integration into the company.</li>
+                    <li>Received a recommendation letter for outstanding contributions and was offered a position upon completion of the internship.</li>
+                </ul>
+            </div>
+            <br><br> 
+            <a id="start-btn"><img src="/images/proceed.png" class="image-button"></a>
+        </div>
+    </div>
+    
+
+  <div id="dark-overlay"></div> 
+
+    <audio id="background-music" loop>
+        <source src="sounds/bgmusic.mp3" type="audio/mp3">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div id="music-controls">
+        <button id="mute-btn">🔊</button>
+        <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+    </div>
+  <div class="container">
+      <div class="sun">
+          <img src="./images/sun.png" alt="Sun">
+      </div>
+
+        <a href="#" class="planet mercury" data-name="Mercury" data-video="videos/vid1.mp4" data-sound="sounds/sound1.mp3"></a>
+        <a href="#" class="planet venus" data-name="Venus" data-video="videos/vid2.mp4" data-sound="sounds/sound2.mp3"></a>
+        <a href="#" class="planet earth" data-name="Earth" data-video="videos/vid3.mp4" data-sound="sounds/sound3.mp3">
+        
+            <div class="moon planet" data-name="Objective"></div>
+        
+        </a>
+  </div>
+
+  <video id="background-video" class="hidden" autoplay loop muted playsinline></video>
+
+  <audio id="sound-effect"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

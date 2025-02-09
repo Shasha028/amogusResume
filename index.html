@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solar Interactive Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preload" href="/font/In_your_face__Joffrey__.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+
+</head>
+<body>
+
+  <div id="intro-modal" class="modal">
+    <div class="modal-content">
+        <div id="modal-stars"></div>
+        <h2 class="modal-title">Welcome to my Solar Amogus Interactive Resume! 🌞🚀👾</h2>
+        <hr class="modal-line">
+        <p class="modal-text">
+            This website is designed as an interactive experience where you can explore my skills, experiences, and background in a fun and engaging way. Follow these simple steps to navigate through my resume:
+        </p>
+
+        <h3 class="modal-subtitle">How to Use</h3>
+        <ol class="modal-list"> <!-- Changed from <ul> to <ol> for numbering -->
+            <li><strong>Click on a Character</strong> – Inside the orbit, you’ll see various characters moving around. Click on any character to reveal information about me.</li>
+            <li><strong>Explore More</strong> – Keep clicking on different characters to unlock more details, such as my education, skills, projects, and work experience.</li>
+            <li><strong>Keep Going!</strong> – The more you click, the more you learn. Try to reach the end and see how far you can go!</li>
+        </ol>
+
+        <p class="modal-text">Enjoy exploring my resume in a unique and interactive way! 🚀✨</p>
+        
+        <a id="start-btn"><img src="/images/start.png" class="image-button"></a>
+
+    </div>
+</div>
+
+    <audio id="background-music" loop>
+      <source src="sounds/bgmusic.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+
+    <div id="music-controls">
+      <button id="mute-btn">🔊</button>
+      <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5">
+    </div>
+
+  <div id="dark-overlay"></div> 
+  
+  <div class="container">
+      <div class="sun">
+          <img src="./images/sun.png" alt="Sun">
+      </div>
+    
+        <a href="" class="planet mercury" data-name="Mercury" data-video="videos/vid1.mp4" data-sound="sounds/sound1.mp3"></a>
+        <a href="#" class="planet venus" data-name="Venus" data-video="videos/vid2.mp4" data-sound="sounds/sound2.mp3"></a>
+        <a href="#" class="planet earth" data-name="Earth" data-video="videos/vid3.mp4" data-sound="sounds/sound3.mp3">
+            <div class="moon planet" data-name="Objective" data-video="videos/vid4.mp4" data-sound="sounds/sound4.mp3"></div>
+        </a>
+        <a href="#" class="planet mars" data-name="Projects" data-video="videos/vid5.mp4" data-sound="sounds/sound5.mp3"></a>
+        <a href="#" class="planet jupiter" data-name="Hobbies" data-video="videos/vid6.mp4" data-sound="sounds/sound6.mp3"></a>
+        <a href="#" class="planet saturn" data-name="Resume" data-video="videos/vid7.mp4" data-sound="sounds/sound7.mp3"></a>
+        <a href="#" class="planet uranus" data-name="Skills" data-video="videos/vid8.mp4" data-sound="sounds/sound8.mp3"></a>
+        <a href="#" class="planet neptune" data-name="Education" data-video="videos/vid9.mp4" data-sound="sounds/sound9.mp3"></a>
+        <a href="" class="planet pluto" data-name="About" data-video="videos/vid1.mp4" data-sound="sounds/sound1.mp3"></a>
+      
+  </div>
+
+    <video id="background-video" class="hidden" autoplay loop muted playsinline></video>
+
+    <audio id="sound-effect"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>

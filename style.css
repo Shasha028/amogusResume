@@ -1,0 +1,589 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    overflow: hidden;
+    scrollbar-width: none;
+    -ms-overflow-style: none; 
+}
+
+@font-face {
+    font-family: 'In your face, Joffrey!';
+    src: url('/font/In_your_face__Joffrey__.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+}
+
+    .image-container {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+        margin-top: 20px;
+        border-radius: 10px; 
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: transparent; 
+    }
+
+    .image-container img {
+        max-width: 100%;
+        max-height: 100%;
+        object-fit: contain;
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+    }
+
+
+
+.modal {
+    font-family: 'In your face, Joffrey!', sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    overflow: hidden;
+}
+
+
+.modal-content {
+    font-family: 'In your face, Joffrey!', sans-serif;
+    position: relative; 
+    background: url('/images/modalbg.png') no-repeat center center;
+    background-size: cover; 
+    padding: 20px;
+    scrollbar-width: none; 
+    -ms-overflow-style: none; 
+    border-radius: 10px;
+    width: 50%;
+    max-height: 80vh; 
+    overflow-y: auto;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+    animation: fadeIn 0.7s ease-in-out;
+    scroll-behavior: smooth; 
+}
+
+.modal-content::-webkit-scrollbar {
+    display: none;
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+
+
+.modal-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: inherit; 
+    filter: blur(8px);
+    border-radius: 10px;
+    z-index: -1; 
+}
+
+
+#start-btn {
+    font-family: 'In your face, Joffrey!', sans-serif;
+    font-size: 18px;
+    padding: 10px 20px;
+    background: transparent;
+    color: black;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.about-me-container {
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    margin-top: 20px;
+}
+
+.about-me-image {
+    border-radius: 50%; 
+    width: 220px; 
+    height: 220px; 
+    margin-bottom: 20px;
+}
+
+.about-me-text {
+    max-width: 850px;
+    text-align: center; 
+    color: white;
+    font-size: 25px; 
+    font-weight: italic;
+}
+
+.modal-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2px; 
+    align-items: center; 
+}
+
+.modal-list p {
+    font-size: 1.1rem;
+    text-align: center; 
+    color: #f4f4f4;
+    font-weight: bold;
+}
+
+.modal-list img {
+    width: 100px; 
+    height: 100px; /* Adjust the size of the image */
+    border-radius: 50%; /* Makes the images circular */
+    margin-bottom: 1px; /* Adds space between image and text */
+}
+
+/* Category Headings (Soft Skills, Hard Skills) */
+.modal-category {
+    font-size: 40px; /* Adjust as needed */
+    font-weight: bold;
+}
+
+/* Subcategory Headings (Programming Languages, Software Proficiency, etc.) */
+.modal-subcategory {
+    font-size: 30px; /* Adjust as needed */
+    font-weight: bold;
+}
+
+/* Hobbies Paragraph */
+.modal-hobbies p {
+    font-size: 25px; /* Adjust paragraph font size */
+    line-height: 1.6;
+    color: #dddddd;
+    text-align: center;
+}
+
+/* Resize modal title */
+.modal-title {
+    font-size: 50px; /* Adjust as needed */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Resize modal text */
+.modal-text {
+    font-size: 16px; /* Adjust text size */
+    line-height: 1.5; /* Improve readability */
+}
+
+/* Resize modal subtitles */
+.modal-subtitle {
+    font-size: 35px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+/* Resize modal list (How to Use steps) */
+.modal-list {
+    font-size: 30px;
+    line-height: 1.6; /* Spacing between lines */
+}
+
+/* Resize modal button */
+#start-btn {
+    font-size: 18px;
+    padding: 12px 24px;
+}
+
+
+
+.image-button {
+    width: 150px;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.image-button:hover {
+    opacity: 0.7;
+}
+
+/* Job Title */
+.experience-job-title {
+    font-size: 34px;
+}
+
+
+/* Company Name */
+.experience-company {
+    font-size: 30px;
+    line-height: 1.6;
+}
+
+/* Experience Duration */
+.experience-duration {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+/* Experience List */
+.experience-list {
+    font-size: 20px;
+    line-height: 1.6;
+}
+
+
+/* Modal Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+/* Background dark overlay */
+#dark-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7); /* Dark overlay */
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+    pointer-events: none;
+
+}
+
+#dark-overlay.visible {
+    opacity: 1;
+}
+
+/* Background Video Effect */
+#background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 6; /* Above everything */
+}
+
+#background-video.visible {
+    opacity: 1;
+}
+
+/* Hidden class to fade out */
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+#music-controls {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 1000;
+}
+
+#mute-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+#volume-slider {
+    width: 100px;
+}
+
+
+.tooltip {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+
+.container {
+    font-size: 6px;
+    width: 60em;  /* You can adjust this if needed */
+    height: 60em;
+    position: relative;
+    transform: scale(1.5); /* Zoom factor (1 is normal size, 1.5 is 1.5x, etc.) */
+    transform-origin: center center; /* Keeps the zoom centered */
+    position: absolute; /* Make sure it's positioned relative to the viewport */
+    top: 55%;  /* Centers the container vertically */
+    left: 55%; /* Centers the container horizontally */
+    transform: translate(-50%, -50%) scale(1.5); /* Adjust for exact centering */
+}
+img{
+    height: 130%;
+    width: 130%;
+}
+
+.planet {
+    position: absolute;
+    display: block;
+    width: 3em; 
+    height: 3em;
+    background: transparent; 
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.sun {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 15em;
+    left: 15em;
+    width: 10em;
+    height: 10em;
+    border-radius: 50%;
+    box-shadow: 0 0 3em rgb(255, 128, 0);
+    animation: orbit 50s linear infinite;
+}
+.mercury,
+.venus,
+.earth,
+.moon,
+.mars,
+.jupiter,
+.saturn,
+.uranus,
+.neptune,
+.pluto {
+    position: absolute;
+    display: block;
+    border-style: solid;
+    border-color: white transparent transparent transparent;
+    border-width: 0.1em 0.1em 0 0;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.mercury {
+    top: 12.5em;
+    left: 12.5em;
+    width: 15em;
+    height: 15em;
+    animation: orbit 68.7s linear infinite;
+}
+
+.venus {
+    top: 10em;
+    left: 10em;
+    width: 20em;
+    height: 20em;
+    animation: orbit 48.7s linear infinite;
+}
+
+.earth {
+    top: 6em;
+    left: 6em;
+    width: 28em;
+    height: 28em; 
+    animation: orbit 36.5s linear infinite;   
+}
+.moon {
+    top: 2em;
+    right: -1em;
+    width: 7em;
+    height: 7em; 
+    animation: orbit 2.7s linear infinite;
+}
+.mars {
+    top: 2em;
+    left: 2.5em;
+    width: 36em;
+    height: 36em; 
+    animation: orbit 26.5s linear infinite;
+}
+.jupiter {
+    top: -2em;
+    left: -2em;
+    width: 45em;
+    height: 45em; 
+    animation: orbit 21s linear infinite;
+}
+.saturn {
+    top: -7em;
+    left: -7em;
+    width: 55em;
+    height: 55em; 
+    animation: orbit 17s linear infinite;
+}
+.uranus {
+    top: -12em;
+    left: -12em;
+    width: 65em;
+    height: 65em; 
+    animation: orbit 19s linear infinite;
+}
+.neptune {
+    top: -17em;
+    left: -17em;
+    width: 75em;
+    height: 75em; 
+    animation: orbit 15s linear infinite;
+}
+.pluto {
+    top: -22em;
+    left: -22em;
+    width: 85em;
+    height: 85em; 
+    animation: orbit 18s linear infinite;
+}
+
+.mercury::before,
+.venus::before,
+.earth::before,
+.moon::before,
+.mars::before,
+.jupiter::before,
+.saturn::before,
+.uranus::before,
+.neptune::before,
+.pluto::before{
+    content: '';
+    position: absolute;
+    display: block;
+    border-radius: 50%;
+    animation: orbit 30s linear infinite;
+}
+.mercury::before {
+    top: 1.5em;
+    right: 0.8em;
+    width: 2em;
+    height: 2em;
+    background-image: url('./char/blue.png');
+    background-size: cover;
+}
+.venus::before {
+    top: 2em;
+    right: 2em;
+    width: 2em;
+    height: 2em;
+    background-image: url('./char/cyan.png');
+    background-size: cover;
+}
+.earth::before {
+    top: 3em;
+    right: 0em;
+    width: 5em;
+    height: 5em;
+    background-image: url('./char/green.png');
+    background-size: cover;
+}
+
+.moon::before {
+    top: 0.8em;
+    right: 0.2em;
+    width: 1.2em;
+    height: 1.2em;
+    background-image: url('./char/lime.png');
+    background-size: cover;
+}
+.mars::before {
+    top: 5em;
+    right: 3em;
+    width: 3em;
+    height: 3em;
+    background-image: url('./char/orange.png');
+    background-size: cover;
+}
+
+.jupiter::before {
+    top: 6em;
+    right: 3em;
+    width: 5em;
+    height: 5em;
+    background-image: url('./char/pink.png');
+    background-size: cover;
+}
+.saturn::before {
+    top: 7.5em;
+    right: 5em;
+    width: 4.5em;
+    height: 4.5em;
+    background-image: url('./char/red.png');
+    background-size: cover;
+}
+.uranus::before {
+    top: 9em;
+    right: 6.5em;
+    width: 4em;
+    height: 4em;
+    background-image: url('./char/violet.png');
+    background-size: cover;
+}
+.neptune::before {
+    top: 10em;
+    right: 8em;
+    width: 4em;
+    height: 4em;
+    background-image: url('./char/yellow.png');
+    background-size: cover;
+}
+.pluto::before {
+    top: 11em;
+    right: 10em;
+    width: 4em;
+    height: 4em;
+    background-image: url('./char/cyan.png');
+    background-size: cover;
+}
+
+.star {
+    position: absolute;
+    background-color: white;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+@keyframes orbit {
+    to {
+        transform: rotate(360deg);
+    }
+}

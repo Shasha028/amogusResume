@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'In your face, Joffrey!';
+    src: url('In_your_face__Joffrey__.woff2') format('woff2'),
+        url('In_your_face__Joffrey__.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
